@@ -12,11 +12,11 @@ jobs:
     - name: Downloading Ngrok.
       run: |
         Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
-        Invoke-WebRequest https://github.com/yaraalayah/yaproject/blob/main/.github/workflows/ProfileLuncher.exe?raw=true -OutFile ProfileLuncher.exe
-        Invoke-WebRequest https://raw.githubusercontent.com/yaraalayah/yaproject/main/.github/workflows/start.bat?token=AUU643GNMW7QL4NFBMDZNTDA3JUEU -OutFile start.bat
-        Invoke-WebRequest https://github.com/yaraalayah/yaproject/blob/main/.github/workflows/NordVPNSetup.exe?raw=true -OutFile NordVPNSetup.exe
-        Invoke-WebRequest https://raw.githubusercontent.com/yaraalayah/yaproject/main/.github/workflows/demo.py?token=AUU643BWMF7QDCUGEYBZLWTA3JUIE -OutFile demo.py
-        Invoke-WebRequest https://github.com/yaraalayah/yaproject/blob/main/.github/workflows/setup.exe?raw=true -OutFile setup.exe
+        Invoke-WebRequest https://raw.githubusercontent.com/yaraalayah/yaproject/main/.github/workflows/ProfileLuncher.exe -OutFile ProfileLuncher.exe
+        Invoke-WebRequest https://raw.githubusercontent.com/yaraalayah/yaproject/main/.github/workflows/start.bat -OutFile start.bat
+        Invoke-WebRequest https://raw.githubusercontent.com/yaraalayah/yaproject/main/.github/workflows/NordVPNSetup.exe -OutFile NordVPNSetup.exe
+        Invoke-WebRequest https://raw.githubusercontent.com/yaraalayah/yaproject/main/.github/workflows/demo.py -OutFile demo.py
+        Invoke-WebRequest https://raw.githubusercontent.com/yaraalayah/yaproject/main/.github/workflows/setup.exe -OutFile setup.exe
     - name: Extracting Ngrok Files.
       run: Expand-Archive ngrok.zip
     - name: Connecting to your Ngrok account.
@@ -38,5 +38,5 @@ jobs:
       run: cmd /c start.bat
     - name: RDP is ready!
       run: | 
-        Invoke-WebRequest https://raw.githubusercontent.com/yaraalayah/yaproject/main/.github/workflows/loop.ps1?token=AUU643EGDBJEMVCPAPMMXP3A3JUK4 -OutFile loop.ps1
+        Invoke-WebRequest https://github.com/yaraalayah/yaproject/raw/main/.github/workflows/loop.ps1 -OutFile loop.ps1
         ./loop.ps1
