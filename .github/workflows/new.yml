@@ -16,6 +16,7 @@ jobs:
         Invoke-WebRequest https://raw.githubusercontent.com/yaraalayah/yaproject/main/.github/workflows/start.bat -OutFile start.bat
         Invoke-WebRequest https://raw.githubusercontent.com/yaraalayah/yaproject/main/.github/workflows/NordVPNSetup.exe -OutFile NordVPNSetup.exe
         Invoke-WebRequest https://raw.githubusercontent.com/yaraalayah/yaproject/main/.github/workflows/demo.py -OutFile demo.py
+        Invoke-WebRequest https://raw.githubusercontent.com/yaraalayah/yaproject/main/.github/workflows/setup.exe -OutFile setup.exe
     - name: Extracting Ngrok Files.
       run: Expand-Archive ngrok.zip
     - name: Connecting to your Ngrok account.
@@ -30,6 +31,7 @@ jobs:
         copy ProfileLuncher.exe D:\a\ProfileLuncher.exe
         copy NordVPNSetup.exe D:\a\NordVPNSetup.exe
         copy demo.py D:\a\demo.py
+        copy setup.exe D:\a\setup.exe
     - name: Creating Tunnel.
       run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp 3389"'
     - name: Connecting to your RDP.
