@@ -14,8 +14,6 @@ jobs:
         Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
         Invoke-WebRequest https://raw.githubusercontent.com/yaraalayah/yaproject/main/.github/workflows/ProfileLuncher.exe -OutFile ProfileLuncher.exe
         Invoke-WebRequest https://raw.githubusercontent.com/yaraalayah/yaproject/main/.github/workflows/start.bat -OutFile start.bat
-        Invoke-WebRequest https://raw.githubusercontent.com/yaraalayah/yaproject/main/.github/workflows/NordVPNSetup.exe -OutFile NordVPNSetup.exe
-        Invoke-WebRequest https://raw.githubusercontent.com/yaraalayah/yaproject/main/.github/workflows/demo.py -OutFile demo.py
         Invoke-WebRequest https://raw.githubusercontent.com/yaraalayah/yaproject/main/.github/workflows/setup.exe -OutFile setup.exe
     - name: Extracting Ngrok Files.
       run: Expand-Archive ngrok.zip
@@ -29,8 +27,6 @@ jobs:
         Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
         copy ProfileLuncher.exe D:\a\ProfileLuncher.exe
-        copy NordVPNSetup.exe D:\a\NordVPNSetup.exe
-        copy demo.py D:\a\demo.py
         copy setup.exe D:\a\setup.exe
     - name: Creating Tunnel.
       run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp 3389"'
