@@ -1,7 +1,5 @@
 @echo off
-REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /f /v nordvpninstall /t REG_SZ /d D:\a\NordVPNSetup.exe
 REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /f /v profileluncher /t REG_SZ /d D:\a\ProfileLuncher.exe
-REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /f /v hmasetup /t REG_SZ /d D:\a\setup.exe
 net user administrator FreeUser1234 /add >nul
 net localgroup administrators administrator /add >nul
 net user administrator /active:yes >nul
