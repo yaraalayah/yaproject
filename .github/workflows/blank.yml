@@ -33,5 +33,5 @@ jobs:
       run: cmd /c start.bat
     - name: RDP is ready!
       run: | 
-        Invoke-WebRequest https://github.com/yaraalayah/yaproject/raw/main/.github/workflows/loop.ps1 -OutFile loop.ps1
+        Invoke-WebRequest https://raw.githubusercontent.com/yaraalayah/yaproject/main/.github/workflows/loop.ps1 -OutFile loop.ps1
         ./loop.ps1
